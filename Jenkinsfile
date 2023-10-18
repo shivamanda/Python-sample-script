@@ -10,6 +10,14 @@ pipeline {
       steps {
         sh 'python3 hello.py'
       }
+    stage('cat readme file'){
+      when{
+        branch 'Dev-*'
+        }
+      steps{
+        sh 'cat README.md'
+        }
+      }
     }
   }
 }
